@@ -58,7 +58,7 @@ The customer retention dataset is contained in a table named:
 - `churn` which has `23 columns and 7043 rows` of observation
 
 
-The tabulation below shows the `Customer Retention` table with its column names and their description:
+The tabulation below shows the `churn` table with its column names and their description:
 | Column Name | Description |
 | ----------- | ----------- |
 | customerID |   Represents the unique number of the customer in the dataset|
