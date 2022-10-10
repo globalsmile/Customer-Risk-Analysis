@@ -43,7 +43,7 @@ and number of tickets opened in the categories administrative and technical
 
 The Dataset used for this analysis was presented by [Pwc Switzerland](https://www.pwc.ch/en/careers-with-pwc/students/virtual-case-experience.html) and available at:
 
-- [Call Center Dataset](https://github.com/globalsmile/Customer-Risk-Analysis/blob/main/02%20Churn-Dataset.xlsx)
+- [Churn Dataset](https://github.com/globalsmile/Customer-Risk-Analysis/blob/main/02%20Churn-Dataset.xlsx)
 
 
 
