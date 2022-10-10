@@ -107,7 +107,7 @@ Further cleaning was done as follows:
 
 After the dataset was cleaned and transformed, it was ready to be modeled.
 
-- A one-to-many (*:1) relationship was created between the `churn` and the `churn - unpivot` tables using the customerId column in each of the tables
+- A one-to-many (*:1) relationship was created between the `churn` and the `churn - unpivot groups` tables using the customerId column in each of the tables
 - The relationship formed in the data model is shown below:
 
 <img align="right" alt="Data Model" width="1000" height = "400" src="https://user-images.githubusercontent.com/106287208/194932956-140622b5-f861-4220-80cf-6a57c080b983.JPG">
