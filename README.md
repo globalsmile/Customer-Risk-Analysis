@@ -43,13 +43,9 @@ and number of tickets opened in the categories administrative and technical
 
 The Dataset used for this analysis was presented by [Pwc Switzerland](https://www.pwc.ch/en/careers-with-pwc/students/virtual-case-experience.html) and available at:
 
-- [Call Center Dataset](https://github.com/globalsmile/Call-Center-Analysis/blob/main/01%20Call-Center-Dataset.xlsx)
+- [Call Center Dataset](https://github.com/globalsmile/Customer-Risk-Analysis/blob/main/02%20Churn-Dataset.xlsx)
 
 
-
-
-
-The dataset is also available at [30DLTweets](https://github.com/globalsmile/Twitter-Sentiment-Analysis/blob/main/30DLTweets.csv)
 
 ---
 
@@ -93,7 +89,11 @@ Data Cleaning for the dataset was done in power query as follows:
 
 A new table named `churn - unpivot groups` was created by duplicating the `churn` table and unpivoting unnecessary columns.
 In the new table, 2 additional conditional columns were added using M-formula:
-- Loyalty(which describes how long as a customer): ` Table.AddColumn(#"Added Conditional Column", "Loyalty", each if [tenure] < 12 then "< 1 year" else if [tenure] < 24 then "< 2 years" else if [tenure] < 36 then "< 3 years" else if [tenure] < 48 then "< 4 years" else if [tenure] < 60 then "< 5 years" else "< 6 years")` 
+
+
+- Loyalty (which describes how long as a customer): ` Table.AddColumn(#"Added Conditional Column", "Loyalty", each if [tenure] < 12 then "< 1 year" else if [tenure] < 24 then "< 2 years" else if [tenure] < 36 then "< 3 years" else if [tenure] < 48 then "< 4 years" else if [tenure] < 60 then "< 5 years" else "< 6 years")` 
+
+
 - Risk category: ` Table.AddColumn(#"Changed Type", "Risk category", each if [tenure] < 24 then "Risk 1" else if [tenure] < 48 then "Risk 2" else "Risk 3Table.AddColumn(#"Changed Type", "Risk category", each if [tenure] < 24 then "Risk 1" else if [tenure] < 48 then "Risk 2" else "Risk 3"Table.AddColumn(#"Changed Type", "Risk category", each if [tenure] < 24 then "Risk 1" else if [tenure] < 48 then "Risk 2" else "Risk 3")`
 
 Further cleaning was done as follows:
@@ -110,7 +110,7 @@ After the dataset was cleaned and transformed, it was ready to be modeled.
 - A one-to-many (*:1) relationship was created between the `churn` and the `churn - unpivot` tables using the customerId column in each of the tables
 - The relationship formed in the data model is shown below:
 
-<img align="right" alt="Data Model" width="1000" height = "400" src="https://user-images.githubusercontent.com/106287208/187106255-bd25a422-fd74-4f5e-a529-7a9052915252.png">
+<img align="right" alt="Data Model" width="1000" height = "400" src="https://user-images.githubusercontent.com/106287208/194932956-140622b5-f861-4220-80cf-6a57c080b983.JPG">
 
 
 ---
