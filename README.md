@@ -21,7 +21,7 @@
 
 # Problem Statement
 
-INTRO :This project is second of three projects from the [Pwc Switzerland Power BI virtual case experience internship program](https://www.theforage.com/virtual-internships/prototype/a87GpgE6tiku7q3gu/PwC-Digital-Up-skilling-Virtual-Case-Experience) which i completed on Forage.
+INTRO :This project is second of three projects from the [Pwc Switzerland Power BI virtual case experience internship program](https://www.theforage.com/virtual-internships/prototype/a87GpgE6tiku7q3gu/PwC-Digital-Up-skilling-Virtual-Case-Experience) which I completed on Forage.
 
 The purpose of this analysis is to: 
 - Define proper KPIs
