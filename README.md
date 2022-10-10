@@ -1,5 +1,5 @@
 # Pwc Switzerland Power BI virtual case experience - Customer Risk Analysis
-<img align="right" alt="Twitter Sentiment Analysis" width="1000" height = "400" src="https://user-images.githubusercontent.com/106287208/187567112-ec593f73-7afe-4ef3-8c80-822591b89038.png">
+<img align="right" alt="Customer Risk Analysis" width="1000" height = "400" src="https://www.pwc.ch/en/images/blog/virtual-case-experience/HC_Virtual%20Case%20Experience_1000x560_NWNS-Power%20BI.png">
 
 ---
 
@@ -21,7 +21,7 @@
 
 # Problem Statement
 
-INTRO :This project is the second of three projects from the PWC SWITZERLAND POWER BI VIRTUAL CASE EXPERIENCE INTERNSHIP PROGRAM on Forage.
+INTRO :This project is second of three projects from the [Pwc Switzerland Power BI virtual case experience internship program](https://www.theforage.com/virtual-internships/prototype/a87GpgE6tiku7q3gu/PwC-Digital-Up-skilling-Virtual-Case-Experience) on Forage.
 
 The purpose of this analysis is to: 
 - Define proper KPIs
@@ -29,242 +29,22 @@ The purpose of this analysis is to:
 and metrics in the dataset.
 - Based on your findings, recommend suggestions as to what needs to be changed
 
-Here are some inputs
+Here are some inputs:
 - Customers who left within the last month
 - Services each customer has signed up for: phone, multiple lines, internet, online security, online backup, device protection, tech 
 support, and streaming TV and movies
-•- Customer account information: how long as a customer, contract, payment method, paperless billing, monthly charges, total charges 
+- Customer account information: how long as a customer, contract, payment method, paperless billing, monthly charges, total charges 
 and number of tickets opened in the categories administrative and technical
-•- Demographic info about customers – gender, age range, and if they have partners and dependents
+- Demographic info about customers – gender, age range, and if they have partners and dependents
 
 ---
 
 # Data Sourcing
 
-- The dataset used for this analysis was scrapped from twitter using python and jupyter notebook
-- The preview of the dataset and python code is shown below:
+The Dataset used for this analysis was presented by [Pwc Switzerland](https://www.pwc.ch/en/careers-with-pwc/students/virtual-case-experience.html) and available at:
 
+- [Call Center Dataset](https://github.com/globalsmile/Call-Center-Analysis/blob/main/01%20Call-Center-Dataset.xlsx)
 
-```python
-!pip install snscrape
-```
-
-    Requirement already satisfied: snscrape in c:\users\user\anaconda3\lib\site-packages (0.4.3.20220106)
-    Requirement already satisfied: lxml in c:\users\user\anaconda3\lib\site-packages (from snscrape) (4.8.0)
-    Requirement already satisfied: beautifulsoup4 in c:\users\user\anaconda3\lib\site-packages (from snscrape) (4.11.1)
-    Requirement already satisfied: requests[socks] in c:\users\user\anaconda3\lib\site-packages (from snscrape) (2.27.1)
-    Requirement already satisfied: filelock in c:\users\user\anaconda3\lib\site-packages (from snscrape) (3.6.0)
-    Requirement already satisfied: soupsieve>1.2 in c:\users\user\anaconda3\lib\site-packages (from beautifulsoup4->snscrape) (2.3.1)
-    Requirement already satisfied: idna<4,>=2.5 in c:\users\user\anaconda3\lib\site-packages (from requests[socks]->snscrape) (3.3)
-    Requirement already satisfied: charset-normalizer~=2.0.0 in c:\users\user\anaconda3\lib\site-packages (from requests[socks]->snscrape) (2.0.4)
-    Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\users\user\anaconda3\lib\site-packages (from requests[socks]->snscrape) (1.26.9)
-    Requirement already satisfied: certifi>=2017.4.17 in c:\users\user\anaconda3\lib\site-packages (from requests[socks]->snscrape) (2021.10.8)
-    Requirement already satisfied: PySocks!=1.5.7,>=1.5.6 in c:\users\user\anaconda3\lib\site-packages (from requests[socks]->snscrape) (1.7.1)
-    
-
-
-```python
-import pandas as pd
-import snscrape.modules.twitter as sntwitter
-```
-
-
-```python
-query = "(#30DaysOfLearning OR #NG30DaysOfLearning) until:2022-06-26 since:2022-05-05"
-tweets = []
-limit = 30000
-
-
-for tweet in sntwitter.TwitterHashtagScraper(query).get_items():
-    
-    if len(tweets) == limit:
-        break
-    else:
-        tweets.append([tweet.date, tweet.url, tweet.user.username, tweet.sourceLabel, tweet.user.location, tweet.content, tweet.likeCount, tweet.retweetCount,  tweet.quoteCount, tweet.replyCount])
-        
-df = pd.DataFrame(tweets, columns=['Date', 'TweetURL','User', 'Source', 'Location', 'Tweet', 'Likes_Count','Retweet_Count', 'Quote_Count', 'Reply_Count'])
-
-df.to_csv('30DLTweets.csv')
-```
-
-
-```python
-df.head()
-```
-
-
-
-
-<div>
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Date</th>
-      <th>TweetURL</th>
-      <th>User</th>
-      <th>Source</th>
-      <th>Location</th>
-      <th>Tweet</th>
-      <th>Likes_Count</th>
-      <th>Retweet_Count</th>
-      <th>Quote_Count</th>
-      <th>Reply_Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2022-06-25 22:51:18+00:00</td>
-      <td>https://twitter.com/poetrineer/status/15408300...</td>
-      <td>poetrineer</td>
-      <td>Twitter for Android</td>
-      <td>Oyo, Nigeria</td>
-      <td>So as one of my commitment to document my lear...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2022-06-25 22:44:10+00:00</td>
-      <td>https://twitter.com/poetrineer/status/15408282...</td>
-      <td>poetrineer</td>
-      <td>Twitter for Android</td>
-      <td>Oyo, Nigeria</td>
-      <td>Finally, here is my updated COVID-19 Data Anal...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2022-06-25 19:25:58+00:00</td>
-      <td>https://twitter.com/MichealOjuri/status/154077...</td>
-      <td>MichealOjuri</td>
-      <td>Twitter Web App</td>
-      <td>Oyo, Nigeria</td>
-      <td>#30NGDaysOfLearning\n#30daysoflearning \n#micr...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2022-06-25 16:44:36+00:00</td>
-      <td>https://twitter.com/oye__aashu/status/15407377...</td>
-      <td>oye__aashu</td>
-      <td>Twitter for Android</td>
-      <td>Nainital, India</td>
-      <td>Day 4/ #30daysoflearning learned all about arr...</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2022-06-25 12:49:02+00:00</td>
-      <td>https://twitter.com/hsb_data/status/1540678455...</td>
-      <td>hsb_data</td>
-      <td>Twitter Web App</td>
-      <td>New Jersey</td>
-      <td>Learning about sub queries on @DataCamp (SQL) ...</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-df.describe()
-```
-
-
-
-
-<div>
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Likes_Count</th>
-      <th>Retweet_Count</th>
-      <th>Quote_Count</th>
-      <th>Reply_Count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>683.000000</td>
-      <td>683.000000</td>
-      <td>683.000000</td>
-      <td>683.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>15.780381</td>
-      <td>3.812592</td>
-      <td>0.185944</td>
-      <td>1.166911</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>41.164555</td>
-      <td>12.665561</td>
-      <td>0.737938</td>
-      <td>2.626554</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>1.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>2.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>8.000000</td>
-      <td>2.000000</td>
-      <td>0.000000</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>549.000000</td>
-      <td>248.000000</td>
-      <td>9.000000</td>
-      <td>29.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
 
