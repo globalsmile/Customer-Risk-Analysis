@@ -117,7 +117,7 @@ After the dataset was cleaned and transformed, it was ready to be modeled.
 
 # Data Visualization
 
-Data visualization for the datasets was done in 3 folds using Microsoft Power BI Desktop:
+Data visualization for the dataset was done in 3 folds using Microsoft Power BI Desktop:
 
 -  The `Welcome` Page: Shows recommendations and a short insight on the report
 -  The `Churn` Page: Shows the churn dashboad containing # of customers at risk, # of Tech Tickets, # of Admin Ticket, Yearly Charges, Monthly charges, Demographics, e.t.c 
