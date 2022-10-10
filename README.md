@@ -251,7 +251,7 @@ As shown from [Data Visualization](https://github.com/globalsmile/Customer-Risk-
 
 # Insights
 
-As shown by [Data Visualization](https://github.com/globalsmile/Twitter-Sentiment-Analysis#Data-Visualization), It can be deduced that:
+As shown by [Data Visualization](https://github.com/globalsmile/Customer-Risk-Analysis#Data-Visualization), It can be deduced that:
 
 - `2955` tech tickets were opened
 - `3632` admin tickets were opened
