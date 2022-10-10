@@ -21,7 +21,7 @@
 
 # Problem Statement
 
-INTRO :This project is second of three projects from the [Pwc Switzerland Power BI virtual case experience internship program](https://www.theforage.com/virtual-internships/prototype/a87GpgE6tiku7q3gu/PwC-Digital-Up-skilling-Virtual-Case-Experience) on Forage.
+INTRO :This project is second of three projects from the [Pwc Switzerland Power BI virtual case experience internship program](https://www.theforage.com/virtual-internships/prototype/a87GpgE6tiku7q3gu/PwC-Digital-Up-skilling-Virtual-Case-Experience) which i completed on Forage.
 
 The purpose of this analysis is to: 
 - Define proper KPIs
@@ -127,20 +127,19 @@ Figure 1 shows visualizations from `Welcome` page
 
 | Figure 1 |
 | ----------- |
-| ![image](https://user-images.githubusercontent.com/106287208/187567316-46bc6332-7507-4f11-b3c7-a18a52ed8e14.png) |
+| ![image](https://user-images.githubusercontent.com/106287208/194933273-39523822-31dd-46b7-80e7-153273d5a599.png) |
 
 Figure 2 shows visualizations from `Churn` page
 
 | Figure 2 |
 | ----------- |
-| ![image](https://user-images.githubusercontent.com/106287208/187567316-46bc6332-7507-4f11-b3c7-a18a52ed8e14.png) |
+| ![image](https://user-images.githubusercontent.com/106287208/194933469-e31e05b4-9c23-48d7-96fe-ae0ecdd25897.png) |
 
 Figure 3 shows visualizations from `Customer Risk Analysis` page
 
 | Figure 3 |
 | ----------- |
-| ![image](https://user-images.githubusercontent.com/106287208/187567316-46bc6332-7507-4f11-b3c7-a18a52ed8e14.png) |
-
+| ![image](https://user-images.githubusercontent.com/106287208/194933633-d0089c62-02fd-4f39-9bf0-3ef5ca08be4b.png) |
 
 
 ---
@@ -151,52 +150,94 @@ Measures used in visualization are:
 
 - churn rate % = `DIVIDE (CALCULATE(COUNT(churn[Churn]), churn[Churn] = "yes" ),CALCULATE ( COUNT (churn[Churn]), ALLSELECTED (churn[Churn] ) )
 )`
+
+
 - Count of Churn for Yes =` CALCULATE(COUNTA('churn'[Churn]), 'churn'[Churn] IN { "Yes" })`
+
+
 - Count of DeviceProtection for Yes = 
 `CALCULATE(
 	COUNTA('churn'[DeviceProtection]),
 	'churn'[DeviceProtection] IN { "Yes" }
 )`
+
+
 - Count of MultipleLines for Yes = 
 `CALCULATE(
 	COUNTA('churn'[MultipleLines]),
 	'churn'[MultipleLines] IN { "Yes" }
 )`
+
+
 - Count of OnlineBackup for Yes = 
 `CALCULATE(
 	COUNTA('churn'[OnlineBackup]),
 	'churn'[OnlineBackup] IN { "Yes" }
 )`
+
+
 - Count of OnlineSecurity for Yes = 
 `CALCULATE(
 	COUNTA('churn'[OnlineSecurity]),
 	'churn'[OnlineSecurity] IN { "Yes" }
 )`
+
+
 - Count of PhoneService for Yes = 
 `CALCULATE(
 	COUNTA('churn'[PhoneService]),
 	'churn'[PhoneService] IN { "Yes" }
 )`
+
+
 - Count of StreamingMovies for Yes = 
 `CALCULATE(
 	COUNTA('churn'[StreamingMovies]),
 	'churn'[StreamingMovies] IN { "Yes" }
 )`
+
+
 - Count of StreamingTV for Yes = 
 `CALCULATE(COUNTA('churn'[StreamingTV]), 'churn'[StreamingTV] IN { "Yes" })`
+
+
 - Count of TechSupport for Yes = 
 `CALCULATE(COUNTA('churn'[TechSupport]), 'churn'[TechSupport] IN { "Yes" })`
+
+
 - Dependents in % = `DIVIDE(CALCULATE(COUNT(churn[Dependents]), churn[Dependents]="Yes", churn[Churn]= "Yes"), CALCULATE(COUNT(churn[Dependents]), churn[Churn]="Yes"),0)`
+
+
 - Device protection in % = `DIVIDE(CALCULATE(COUNT(churn[DeviceProtection]), churn[DeviceProtection]="Yes", churn[Churn]="Yes"),CALCULATE(COUNT(churn[DeviceProtection]),churn[Churn]="Yes"),0)`
+
+
 - Multiple lines no in % =` DIVIDE(CALCULATE(COUNT(churn[MultipleLines]), churn[MultipleLines]="No", churn[Churn]="Yes"),CALCULATE(COUNT(churn[MultipleLines]),churn[Churn]="Yes", churn[MultipleLines] <> "No phone service"),0)`
+
+
 - Multiple Lines yes in % =` DIVIDE(CALCULATE(COUNT(churn[MultipleLines]), churn[MultipleLines]="Yes", churn[Churn]= "Yes"), CALCULATE(COUNT(churn[MultipleLines]), churn[Churn]="Yes", churn[MultipleLines] <> "No phone service"),0)`
+
+
 - Online Bacup in % = `DIVIDE(CALCULATE(COUNT(churn[OnlineBackup]), churn[OnlineBackup]="Yes", churn[Churn]="Yes"),CALCULATE(COUNT(churn[OnlineBackup]),churn[Churn]="Yes"),0)`
+
+
 - Online Sec. in % =` DIVIDE(CALCULATE(COUNT(churn[OnlineSecurity]), churn[OnlineSecurity]="Yes", churn[Churn]="Yes"),CALCULATE(COUNT(churn[OnlineSecurity]),churn[Churn]="Yes"),0)`
+
+
 - Partner in % =` DIVIDE(CALCULATE(COUNT(churn[Partner]), churn[Partner]="Yes", churn[Churn]= "Yes"), CALCULATE(COUNT(churn[Partner]), churn[Churn]="Yes"),0)`
+
+
 - Phone Service in % = `DIVIDE(CALCULATE(COUNT(churn[PhoneService]), churn[PhoneService]="Yes", churn[Churn]="Yes"),CALCULATE(COUNT(churn[PhoneService]),churn[Churn]="Yes"),0)`
+
+
 - SeniorCitizen in % =` DIVIDE(CALCULATE(COUNT(churn[SeniorCitizen]), churn[SeniorCitizen]=1, churn[Churn]= "Yes"), CALCULATE(COUNT(churn[SeniorCitizen]), churn[Churn]="Yes"),0)`
+
+
 - Streaming Movies in % = `DIVIDE(CALCULATE(COUNT(churn[StreamingMovies]), churn[StreamingMovies]="Yes", churn[Churn]="Yes"),CALCULATE(COUNT(churn[StreamingMovies]),churn[Churn]="Yes"),0)`
+
+
 - Streaming TV in % = `DIVIDE(CALCULATE(COUNT(churn[StreamingTV]), churn[StreamingTV]="Yes", churn[Churn]="Yes"),CALCULATE(COUNT(churn[StreamingTV]),churn[Churn]="Yes"),0)`
+
+
 - Tech Support in % = `DIVIDE(CALCULATE(COUNT(churn[TechSupport]), churn[TechSupport]="Yes", churn[Churn]="Yes"),CALCULATE(COUNT(churn[TechSupport]),churn[Churn]="Yes"),0)`
 
 
@@ -212,8 +253,8 @@ As shown from [Data Visualization](https://github.com/globalsmile/Customer-Risk-
 
 As shown by [Data Visualization](https://github.com/globalsmile/Twitter-Sentiment-Analysis#Data-Visualization), It can be deduced that:
 
--`2955` tech tickets were opened
--`3632` admin tickets were opened
+- `2955` tech tickets were opened
+- `3632` admin tickets were opened
 - The monthly charges is `$456.12K` 
 
 ---
@@ -234,4 +275,4 @@ As shown by [Data Visualization](https://github.com/globalsmile/Twitter-Sentimen
 
 You can interact with the report here: 
 
-[Report](https://app.powerbi.com/view?r=eyJrIjoiZjMzMjk1ZDAtYzBjYy00OTZjLTk1YzQtMzI1MjE0NWFkOGYxIiwidCI6IjQ5ODY4YWYzLWNjNWYtNDIxNC04YjdmLTQwZjM3NDY0OWEwOSJ9)
+[Report](https://app.powerbi.com/view?r=eyJrIjoiMjg1NGRmN2UtYzVkNC00MmM5LWI4MWItNzhjYjhhOWU0ZWQwIiwidCI6IjQ5ODY4YWYzLWNjNWYtNDIxNC04YjdmLTQwZjM3NDY0OWEwOSJ9)
