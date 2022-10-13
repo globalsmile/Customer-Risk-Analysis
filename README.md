@@ -275,4 +275,4 @@ As shown by [Data Visualization](https://github.com/globalsmile/Customer-Risk-An
 
 You can interact with the report here: 
 
-[Report](https://app.powerbi.com/view?r=eyJrIjoiMjg1NGRmN2UtYzVkNC00MmM5LWI4MWItNzhjYjhhOWU0ZWQwIiwidCI6IjQ5ODY4YWYzLWNjNWYtNDIxNC04YjdmLTQwZjM3NDY0OWEwOSJ9)
+[View Report](https://app.powerbi.com/view?r=eyJrIjoiMjg1NGRmN2UtYzVkNC00MmM5LWI4MWItNzhjYjhhOWU0ZWQwIiwidCI6IjQ5ODY4YWYzLWNjNWYtNDIxNC04YjdmLTQwZjM3NDY0OWEwOSJ9)
