@@ -53,7 +53,7 @@ The Dataset used for this analysis was presented by [Pwc Switzerland](https://ww
 
 Data transformation was done in Power Query and the dataset was loaded into Microsoft Power BI Desktop for modeling.
 
-The customer retention dataset is contained in a table named:
+The customer retention dataset is given by a table named:
 
 - `churn` which has `23 columns and 7043 rows` of observation
 
