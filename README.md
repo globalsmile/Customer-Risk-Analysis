@@ -94,7 +94,7 @@ In the new table, 2 additional conditional columns were added using M-formula:
 
 - Risk category: ` Table.AddColumn(#"Changed Type", "Risk category", each if [tenure] < 24 then "Risk 1" else if [tenure] < 48 then "Risk 2" else "Risk 3Table.AddColumn(#"Changed Type", "Risk category", each if [tenure] < 24 then "Risk 1" else if [tenure] < 48 then "Risk 2" else "Risk 3"Table.AddColumn(#"Changed Type", "Risk category", each if [tenure] < 24 then "Risk 1" else if [tenure] < 48 then "Risk 2" else "Risk 3")`
 
-Further cleaning was done as follows:
+Further cleansing was done as follows:
 
 - Unnecessary columns were removed 
 - Each of the columns in the table were validated to have the correct data type 
