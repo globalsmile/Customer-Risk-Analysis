@@ -1,5 +1,5 @@
 # Pwc Switzerland Power BI virtual case experience - Customer Risk Analysis
-<img align="right" alt="Customer Risk Analysis" width="1000" height = "400" src="https://www.pwc.ch/en/images/blog/virtual-case-experience/HC_Virtual%20Case%20Experience_1000x560_NWNS-Power%20BI.png">
+<img align="right" alt="Customer Risk Analysis" width="1000" height = "500" src="https://user-images.githubusercontent.com/106287208/194933469-e31e05b4-9c23-48d7-96fe-ae0ecdd25897.png">
 
 ---
 
